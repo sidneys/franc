@@ -3,8 +3,8 @@
 module.exports = [
   /* Using both results in incorrect results.
    * `build.js` adds support for `fas`. */
-  'prs', /* Western Persian */
-  'pes', /* Dari */
+  'prs' /* Western Persian */,
+  'pes' /* Dari */,
   /* `cbs` and `prq` have the same entries:
    *
    * - http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cbs
@@ -19,5 +19,8 @@ module.exports = [
    * I've sent an e-mail out to OHCHR and am waiting
    * for an answer. */
   'cbs',
-  'prq'
-];
+  'prq',
+
+  /* Same UDHR as ckb (Central Kurdish), but with less speakers. */
+  'kmr' /* Northern Kurdish */
+]

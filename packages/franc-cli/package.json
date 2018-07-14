@@ -1,6 +1,6 @@
 {
   "name": "franc-cli",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "CLI to detect the language of text",
   "license": "MIT",
   "keywords": [
@@ -20,8 +20,8 @@
     "index.js"
   ],
   "dependencies": {
-    "franc": "^3.0.0",
-    "meow": "^4.0.0"
+    "franc": "^4.0.0",
+    "meow": "^5.0.0"
   },
   "repository": "https://github.com/wooorm/franc/tree/master/packages/franc-cli",
   "bugs": "https://github.com/wooorm/franc/issues",

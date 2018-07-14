@@ -9,7 +9,7 @@ Detect the language of text.
 
 1.  **franc** can support more languages<sup>(†)</sup> than any other
     library
-2.  **franc** is packaged with support for [81][s], [186][m], or [389][l]
+2.  **franc** is packaged with support for [82][s], [188][m], or [402][l]
     languages
 3.  **franc** has a CLI
 
@@ -28,9 +28,9 @@ to get reliable results.
 npm install franc
 ```
 
-This installs the [`franc`][m] package, with support for 186 languages
-(languages which have 1 million or more speakers).  [`franc-min`][s] (81
-languages, 8m or more speakers) and [`franc-all`][l] (all 389 possible
+This installs the [`franc`][m] package, with support for 188 languages
+(languages which have 1 million or more speakers).  [`franc-min`][s] (82
+languages, 8m or more speakers) and [`franc-all`][l] (all 402 possible
 languages) are also available.  Finally, use `franc-cli` to install the
 [CLI][].
 
@@ -40,21 +40,22 @@ available on [GitHub Releases][releases].
 ## Usage
 
 ```javascript
-var franc = require('franc');
+var franc = require('franc')
 
-franc('Alle menslike wesens word vry'); //=> 'afr'
-franc('এটি একটি ভাষা একক IBM স্ক্রিপ্ট'); //=> 'ben'
-franc('Alle menneske er fødde til fridom'); //=> 'nno'
-franc(''); //=> 'und'
-franc('the'); //=> 'und'
+franc('Alle menslike wesens word vry') // => 'afr'
+franc('এটি একটি ভাষা একক IBM স্ক্রিপ্ট') // => 'ben'
+franc('Alle menneske er fødde til fridom') // => 'nno'
+franc('') // => 'und'
+franc('the') // => 'und'
+
 /* You can change what’s too short (default: 10): */
-franc('the', {minLength: 3}); // 'sco'
+franc('the', {minLength: 3}) // => 'sco'
 ```
 
 ###### `.all`
 
 ```js
-franc.all('O Brasil caiu 26 posições');
+console.log(franc.all('O Brasil caiu 26 posições'))
 ```
 
 Yields:
@@ -71,7 +72,7 @@ Yields:
 ###### `whitelist`
 
 ```js
-franc.all('O Brasil caiu 26 posições', {whitelist: ['por', 'spa']});
+console.log(franc.all('O Brasil caiu 26 posições', {whitelist: ['por', 'spa']}))
 ```
 
 Yields:
@@ -83,7 +84,7 @@ Yields:
 ###### `blacklist`
 
 ```js
-franc.all('O Brasil caiu 26 posições', {blacklist: ['src', 'glg']});
+console.log(franc.all('O Brasil caiu 26 posições', {blacklist: ['src', 'glg']}))
 ```
 
 Yields:
@@ -144,9 +145,14 @@ $ echo "Alle mennesker er født frie og" | franc --whitelist nob,dan
 
 | Package | Languages | Speakers |
 | ------- | --------- | -------- |
-| [`franc-min`][s] | 81 | 8M or more |
-| [`franc`][m] | 186 | 1M or more |
-| [`franc-all`][l] | 389 | - |
+| [`franc-min`][s] | 82 | 8M or more |
+| [`franc`][m] | 188 | 1M or more |
+| [`franc-all`][l] | 402 | - |
+
+### Language code
+
+Note that franc returns [ISO 639-3][iso6393] codes (three letter codes).
+**Not** ISO 639-1 or ISO 639-2.  See also [GH-10][] and [GH-30][].
 
 ## Ports
 
@@ -215,3 +221,9 @@ under the MIT license: respectively, [Kent S. Johnson][grant-3],
 [m]: https://github.com/wooorm/franc/tree/master/packages/franc
 
 [l]: https://github.com/wooorm/franc/tree/master/packages/franc-all
+
+[iso6393]: https://iso639-3.sil.org/code_tables/639/data
+
+[gh-10]: https://github.com/wooorm/franc/issues/10
+
+[gh-30]: https://github.com/wooorm/franc/issues/30
